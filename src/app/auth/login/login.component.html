@@ -1,0 +1,22 @@
+<main class="d-flex justify-content-center align-items-center vh-100">
+  <div class="col-12 col-md-6 col-lg-4">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="shadow p-4 rounded-3 bg-light">
+      <h1 class="h3 mb-3 fw-light text-center">Login</h1>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" [formControl]="emailFormControl" placeholder="name@example.com" name="email">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" [formControl]="passwordFormControl" placeholder="Password" name="password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <button [disabled]="!loginForm.valid" class="btn btn-primary w-100 py-2" type="submit">Login</button>
+    </form>
+    <div class="text-center mt-3">
+      <span class="fw-light" >You don't have an account yet?</span>
+      <a class="text-decoration-none" [routerLink]="['/auth/register']" routerLinkActive="router-link-active">
+         Register
+      </a>
+    </div>
+  </div>
+</main>
